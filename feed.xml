@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>rodrigo-de-avila</title>
+    <link href="https://rdeavila.github.io/gh-pages/feed.xml" rel="self" />
+    <link href="https://rdeavila.github.io/gh-pages" />
+    <updated>2017-08-11T20:13:27-03:00</updated>
+    <author>
+        <name>Rodrigo de Avila</name>
+    </author>
+    <id>https://rdeavila.github.io/gh-pages</id>
+
+    <entry>
+        <title>Como fazer backup do Evolution</title>
+        <author>
+            <name>Rodrigo de Avila</name>
+        </author>
+        <link href="https://rdeavila.github.io/gh-pages/como_fazer_backup_do_evolution.html"/>
+        <id>https://rdeavila.github.io/gh-pages/como_fazer_backup_do_evolution.html</id>
+
+        <updated>2017-08-11T14:30:09-03:00</updated>
+            <summary></summary>
+        <content type="html">
+            <![CDATA[
+                <p>Se voc&ecirc;, assim como eu, utiliza o Evolution no Ubuntu como cliente de e-mail, j&aacute; precisou fazer backup de suas mensagens para passar para outro computador. Sinceramente, achei este esquema mais f&aacute;cil do que os backups do Thunderbird.<br><br>Siga os seguintes passos para criar um backup dos e-mails/configura&ccedil;&otilde;es do Evolution:</p>
+
+<p>* Encerre os servi&ccedil;os evolution e gconftool-2:<br><br><code>gconftool-2 --shutdown</code><br><code>evolution --force-shutdown</code><br><br>* Crie um arquivo com os dados e os arquivos de configura&ccedil;&atilde;o.<br><br>**Nota**: para salvar os dados e configura&ccedil;&otilde;es completas do Evolution, voc&ecirc; precisa salvar os seguintes arquivos/diret&oacute;rios:<br><br><code>~/.evolution/</code><br><code>~/.gconf/apps/evolution/</code><br><code>~/.gnome2_private/Evolution</code><br><br>O seguinte comando pode cuidar de fazer isto:<br><br><code>cd</code><br><code>tar -cvzf evolution-backup.tar.gz .evolution .gconf/apps/evolution .gnome2_private/Evolution</code><br><br>* Restaurar o backup<br><br>Agora o arquivo `evolution-backup.tar.gz` &eacute; o backup que voc&ecirc; tanto queria. Voc&ecirc; pode mov&ecirc;-lo para um outro computador com Ubuntu, e simplesmente descompactar o arquivo dentro do diret&oacute;rio `/home/nomedousuario` para restaurar o backup.<br><br>Para fazer isto:<br><br><code>gconftool-2 --shutdown</code><br><code>evolution --force-shutdown</code><br><code>cd</code><br><code>tar xzf evolution-backup.tar.gz</code><br><code>gconftool-2 --unload evolution_setting.xml</code><br><code>gconftool-2 --load evolution_setting.xml</code><br><br></p>
+            ]]>
+        </content>
+    </entry>
+</feed>
