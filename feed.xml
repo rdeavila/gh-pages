@@ -3,7 +3,7 @@
     <title>rodrigo-de-avila</title>
     <link href="https://rdeavila.github.io/gh-pages/feed.xml" rel="self" />
     <link href="https://rdeavila.github.io/gh-pages" />
-    <updated>2017-08-11T20:34:21-03:00</updated>
+    <updated>2017-08-11T20:36:03-03:00</updated>
     <author>
         <name>Rodrigo de Avila</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://rdeavila.github.io/gh-pages/como_fazer_backup_do_evolution.html"/>
         <id>https://rdeavila.github.io/gh-pages/como_fazer_backup_do_evolution.html</id>
 
-        <updated>2017-08-11T20:34:00-03:00</updated>
+        <updated>2017-08-11T20:35:04-03:00</updated>
             <summary></summary>
         <content type="html">
             <![CDATA[
@@ -29,7 +29,7 @@
 <pre>~/.evolution/<br>~/.gconf/apps/evolution/<br>~/.gnome2_private/Evolution</pre>
 <p>O seguinte comando pode cuidar de fazer isto:</p>
 <pre>cd<br>tar -cvzf evolution-backup.tar.gz .evolution .gconf/apps/evolution .gnome2_private/Evolution</pre>
-<p>Restaurar o backup<br><br>Agora o arquivo `evolution-backup.tar.gz` &eacute; o backup que voc&ecirc; tanto queria. Voc&ecirc; pode mov&ecirc;-lo para um outro computador com Ubuntu, e simplesmente descompactar o arquivo dentro do diret&oacute;rio `/home/nomedousuario` para restaurar o backup.<br><br>Para fazer isto:</p>
+<p>Restaurar o backup<br><br>Agora o arquivo <code>evolution-backup.tar.gz</code> &eacute; o backup que voc&ecirc; tanto queria. Voc&ecirc; pode mov&ecirc;-lo para um outro computador com Ubuntu, e simplesmente descompactar o arquivo dentro do diret&oacute;rio <code>/home/nomedousuario</code> para restaurar o backup.<br><br>Para fazer isto:</p>
 <pre>gconftool-2 --shutdown<br>evolution --force-shutdown<br>cd<br>tar xzf evolution-backup.tar.gz<br>gconftool-2 --unload evolution_setting.xml<br>gconftool-2 --load evolution_setting.xml</pre>
             ]]>
         </content>
@@ -39,10 +39,10 @@
         <author>
             <name>Rodrigo de Avila</name>
         </author>
-        <link href="https://rdeavila.github.io/gh-pages/como-usar-ssh-sem-senha-com-ssh-keygen.html"/>
-        <id>https://rdeavila.github.io/gh-pages/como-usar-ssh-sem-senha-com-ssh-keygen.html</id>
+        <link href="https://rdeavila.github.io/gh-pages/como_usar_ssh_sem_senha_com_ssh_keygen.html"/>
+        <id>https://rdeavila.github.io/gh-pages/como_usar_ssh_sem_senha_com_ssh_keygen.html</id>
 
-        <updated>2017-08-11T20:34:08-03:00</updated>
+        <updated>2017-08-11T20:35:53-03:00</updated>
             <summary></summary>
         <content type="html">
             <![CDATA[
