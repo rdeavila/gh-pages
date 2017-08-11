@@ -3,7 +3,7 @@
     <title>rodrigo-de-avila</title>
     <link href="https://rdeavila.github.io/gh-pages/feed.xml" rel="self" />
     <link href="https://rdeavila.github.io/gh-pages" />
-    <updated>2017-08-11T20:26:00-03:00</updated>
+    <updated>2017-08-11T20:34:21-03:00</updated>
     <author>
         <name>Rodrigo de Avila</name>
     </author>
@@ -17,13 +17,45 @@
         <link href="https://rdeavila.github.io/gh-pages/como_fazer_backup_do_evolution.html"/>
         <id>https://rdeavila.github.io/gh-pages/como_fazer_backup_do_evolution.html</id>
 
-        <updated>2017-08-11T14:30:09-03:00</updated>
+        <updated>2017-08-11T20:34:00-03:00</updated>
             <summary></summary>
         <content type="html">
             <![CDATA[
                 <p>Se voc&ecirc;, assim como eu, utiliza o Evolution no Ubuntu como cliente de e-mail, j&aacute; precisou fazer backup de suas mensagens para passar para outro computador. Sinceramente, achei este esquema mais f&aacute;cil do que os backups do Thunderbird.<br><br>Siga os seguintes passos para criar um backup dos e-mails/configura&ccedil;&otilde;es do Evolution:</p>
 
-<p>* Encerre os servi&ccedil;os evolution e gconftool-2:<br><br><code>gconftool-2 --shutdown</code><br><code>evolution --force-shutdown</code><br><br>* Crie um arquivo com os dados e os arquivos de configura&ccedil;&atilde;o.<br><br>**Nota**: para salvar os dados e configura&ccedil;&otilde;es completas do Evolution, voc&ecirc; precisa salvar os seguintes arquivos/diret&oacute;rios:<br><br><code>~/.evolution/</code><br><code>~/.gconf/apps/evolution/</code><br><code>~/.gnome2_private/Evolution</code><br><br>O seguinte comando pode cuidar de fazer isto:<br><br><code>cd</code><br><code>tar -cvzf evolution-backup.tar.gz .evolution .gconf/apps/evolution .gnome2_private/Evolution</code><br><br>* Restaurar o backup<br><br>Agora o arquivo `evolution-backup.tar.gz` &eacute; o backup que voc&ecirc; tanto queria. Voc&ecirc; pode mov&ecirc;-lo para um outro computador com Ubuntu, e simplesmente descompactar o arquivo dentro do diret&oacute;rio `/home/nomedousuario` para restaurar o backup.<br><br>Para fazer isto:<br><br><code>gconftool-2 --shutdown</code><br><code>evolution --force-shutdown</code><br><code>cd</code><br><code>tar xzf evolution-backup.tar.gz</code><br><code>gconftool-2 --unload evolution_setting.xml</code><br><code>gconftool-2 --load evolution_setting.xml</code><br><br></p>
+<p>Encerre os servi&ccedil;os evolution e gconftool-2:</p>
+<pre>gconftool-2 --shutdown<br>evolution --force-shutdown</pre>
+<p>Crie um arquivo com os dados e os arquivos de configura&ccedil;&atilde;o.<br><br><strong>Nota:</strong> para salvar os dados e configura&ccedil;&otilde;es completas do Evolution, voc&ecirc; precisa salvar os seguintes arquivos/diret&oacute;rios:</p>
+<pre>~/.evolution/<br>~/.gconf/apps/evolution/<br>~/.gnome2_private/Evolution</pre>
+<p>O seguinte comando pode cuidar de fazer isto:</p>
+<pre>cd<br>tar -cvzf evolution-backup.tar.gz .evolution .gconf/apps/evolution .gnome2_private/Evolution</pre>
+<p>Restaurar o backup<br><br>Agora o arquivo `evolution-backup.tar.gz` &eacute; o backup que voc&ecirc; tanto queria. Voc&ecirc; pode mov&ecirc;-lo para um outro computador com Ubuntu, e simplesmente descompactar o arquivo dentro do diret&oacute;rio `/home/nomedousuario` para restaurar o backup.<br><br>Para fazer isto:</p>
+<pre>gconftool-2 --shutdown<br>evolution --force-shutdown<br>cd<br>tar xzf evolution-backup.tar.gz<br>gconftool-2 --unload evolution_setting.xml<br>gconftool-2 --load evolution_setting.xml</pre>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Como usar SSH sem senha, com ssh-keygen</title>
+        <author>
+            <name>Rodrigo de Avila</name>
+        </author>
+        <link href="https://rdeavila.github.io/gh-pages/como-usar-ssh-sem-senha-com-ssh-keygen.html"/>
+        <id>https://rdeavila.github.io/gh-pages/como-usar-ssh-sem-senha-com-ssh-keygen.html</id>
+
+        <updated>2017-08-11T20:34:08-03:00</updated>
+            <summary></summary>
+        <content type="html">
+            <![CDATA[
+                <p>Se voc&ecirc; costuma logar por ssh em v&aacute;rias m&aacute;quinas e gostaria de n&atilde;o precisar entrar a senha cada vez, siga o seguinte procedimento:</p>
+
+<pre><code>ssh-keygen</code></pre>
+<p>Quando for perguntado a voc&ecirc; o local onde salvar o arquivo, escolha o lugar padr&atilde;o. Pressione enter quando solicitado (n&atilde;o entre com passphrases). Se quiser usar uma senha, melhor. Mas da&iacute; n&atilde;o fica mais um SSH sem senha :D</p>
+<p>Este programa cria 2 arquivos:</p>
+<pre>.ssh/id_rsa<br>.ssh/id_rsa.pub</pre>
+<p>Transfira o <code>id_rsa.pub</code> para a m&aacute;quina que voc&ecirc; deseja conectar remotamente, usando o comando abaixo. Substitua login por seu nome de usu&aacute;rio no computador remoto, e maquinaremota pelo endere&ccedil;o IP do servidor remoto. Se preciso, altere o n&uacute;mero da porta do servidor SSH, no par&acirc;metro <code>-p</code></p>
+<pre>ssh-copy-id -i .ssh/id_rsa.pub -p 22 <a href="mailto:login@maquinaremota">login@maquinaremota</a></pre>
+<p>Caso o computador que voc&ecirc; esteja usando n&atilde;o possua o comando <code>ssh-copy-id</code>, pode-se fazer a c&oacute;pia direta do arquivo:</p>
+<pre>scp ~/.ssh/id_rsa.pub login@maquinaremota:.ssh/authorized_keys2</pre>
             ]]>
         </content>
     </entry>
