@@ -3,12 +3,32 @@
     <title>rodrigo-de-avila</title>
     <link href="https://rdeavila.github.io/gh-pages/feed.xml" rel="self" />
     <link href="https://rdeavila.github.io/gh-pages" />
-    <updated>2017-08-11T20:36:03-03:00</updated>
+    <updated>2017-08-11T20:38:32-03:00</updated>
     <author>
         <name>Rodrigo de Avila</name>
     </author>
     <id>https://rdeavila.github.io/gh-pages</id>
 
+    <entry>
+        <title>Como testar as configurações do nginx</title>
+        <author>
+            <name>Rodrigo de Avila</name>
+        </author>
+        <link href="https://rdeavila.github.io/gh-pages/como-testar-as-configuracoes-do-nginx.html"/>
+        <id>https://rdeavila.github.io/gh-pages/como-testar-as-configuracoes-do-nginx.html</id>
+
+        <updated>2017-08-11T20:38:23-03:00</updated>
+            <summary></summary>
+        <content type="html">
+            <![CDATA[
+                Ao alterar as configura&ccedil;&otilde;es do nginx, voc&ecirc; pode testar a sintaxe do <code>nginx.conf</code> antes<br>de reiniciar o servidor. No Ubuntu 14.04, voc&ecirc; pode executar o seguinte comando antes do restart:<br>
+<pre>sudo nginx -t -c /etc/nginx/nginx.conf</pre>
+<br>Caso o arquivo de configura&ccedil;&atilde;o do seu servidor esteja em um local diferente, basta informar o local correto no comando acima.<br><br>Se a sintaxe do arquivo estiver correta, voc&ecirc; receber&aacute; uma mensagem parecida com esta:<br>
+<pre>nginx: the configuration file /etc/nginx/nginx.conf syntax is ok<br>nginx: configuration file /etc/nginx/nginx.conf test is successful</pre>
+<br>Fonte: <a href="https://wincent.com/wiki/Checking_nginx_config_file_syntax" target="_blank" rel="noopener noreferrer">Checking nginx config file syntax</a>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Como fazer backup do Evolution</title>
         <author>
